@@ -9,6 +9,14 @@ app.get("/", (req, res) => {
   res.send("✅ Backend is alive");
 });
 
+app.get("/number", (req, res) => {
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    res.json({
+        numbers,
+        message: "✅ Backend is giving outputs"
+  });
+});
+
 // ✅ node-cron internal job — logs every 5 mins
 cron.schedule("*/5 * * * *", () => {
   console.log(`🔁 Internal cron running at ${new Date().toLocaleTimeString()}`);
